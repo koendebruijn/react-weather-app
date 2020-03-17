@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import classes from './Temperature.module.scss';
 
 const Temperature = props => {
-  const [isCelsius, setIsCelsius] = useState(false);
+  const [isCelsius, setIsCelsius] = useState(true);
   const [fahr, setFahr] = useState(Math.floor(props.temperature));
   const [cel, setCel] = useState(
     Math.floor((props.temperature - 32) * (5 / 9))
