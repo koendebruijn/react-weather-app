@@ -1,0 +1,49 @@
+.Input {
+  font-size: 18px;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  width: 60%;
+  border-radius: 10px;
+  background-color: rgba($color: #fff, $alpha: 0.4);
+  box-sizing: border-box;
+  // filter: drop-shadow(5px 5px 10px black);
+
+  &::placeholder {
+    color: rgba($color: #fff, $alpha: 0.5);
+    font-family: 'Roboto', sans-serif;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.Suggestions {
+  box-sizing: border-box;
+
+  width: 60%;
+  // padding: 0.5em 1em;
+  background-color: rgba($color: #fff, $alpha: 0.4);
+  border-radius: 0 0 15px 15px;
+}
+
+.InputActive {
+  @extend .Input;
+  border-radius: 10px 10px 0 0;
+}
+
+.SuggestionItem {
+  color: white;
+  padding: 1em 0.5em;
+}
+
+.SuggestionItemActive {
+  @extend .SuggestionItem;
+  background-color: rgba($color: #fff, $alpha: 0.1);
+  cursor: pointer;
+
+  &:last-child {
+    border-radius: 0 0 10px 10px;
+  }
+}

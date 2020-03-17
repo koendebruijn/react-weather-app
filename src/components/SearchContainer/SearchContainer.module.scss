@@ -1,14 +1,6 @@
 .SearchContainer {
-  border: 1px solid black;
-  height: 100px;
-  width: 600px;
-  padding: 2em;
-  border-radius: 10px;
-
-  h2 {
-    text-align: left;
-    margin-bottom: 0.5em;
-    font-family: 'Roboto', sans-serif;
-    // width: 200px;
+  h1 {
+    color: rgba($color: #fff, $alpha: 0.7);
+    margin-bottom: 1em;
   }
 }

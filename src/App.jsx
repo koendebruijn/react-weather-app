@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
 import SearchContainer from './components/SearchContainer/SearchContainer';
-import Navigation from './components/Navigation/Navigation';
 import Axios from 'axios';
 import Currently from './components/Currently/Currently';
 
@@ -34,7 +33,6 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Navigation />
       <SearchContainer handleGeoLocation={handleGeoLocation} />
       {forecast ? <Currently currentWeather={forecast.currently} /> : null}
     </div>

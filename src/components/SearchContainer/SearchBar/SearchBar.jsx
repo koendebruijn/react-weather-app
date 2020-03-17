@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import classes from './SearchBar.module.scss';
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng
 } from 'react-places-autocomplete';
-import TextField from '@material-ui/core/TextField';
 
 const SearchBar = props => {
   const [address, setAddress] = useState('');
@@ -27,45 +27,32 @@ const SearchBar = props => {
       onSelect={handleSelect}>
       {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
         <div>
-          <TextField
-            id='outlined-basic'
-            label='City'
-            variant='outlined'
-            style={{ width: '100%' }}
+          <input
             {...getInputProps({
               placeholder: 'Search Places ...',
-              className: 'location-search-input'
+              className: `location-search-input ${
+                suggestions.length === 0 ? classes.Input : classes.InputActive
+              }`
             })}
           />
           <div
-            className='autocomplete-dropdown-container'
-            style={
-              suggestions.length === 0
-                ? null
-                : { border: '1px solid black', backgroundColor: 'white' }
-            }>
-            {loading && <div>Loading...</div>}
+            className={`autocomplete-dropdown-container ${
+              suggestions.length === 0 ? null : classes.Suggestions
+            }`}>
+            {loading && (
+              <div>
+                <p>Loading...</p>
+              </div>
+            )}
             {suggestions.map(suggestion => {
               const className = suggestion.active
-                ? 'suggestion-item--active'
-                : 'suggestion-item';
-              // inline style for demonstration purpose
-              const style = suggestion.active
-                ? {
-                    backgroundColor: 'lightBlue',
-                    cursor: 'pointer',
-                    padding: '10px'
-                  }
-                : {
-                    backgroundColor: '#ffffff',
-                    cursor: 'pointer',
-                    padding: '10px'
-                  };
+                ? `suggestion-item--active ${classes.SuggestionItemActive}`
+                : `suggestion-item ${classes.SuggestionItem}`;
+
               return (
                 <div
                   {...getSuggestionItemProps(suggestion, {
-                    className,
-                    style
+                    className
                   })}>
                   <span>{suggestion.description}</span>
                 </div>

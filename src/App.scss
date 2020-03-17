@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
   /* box-sizing: border-box; */
+}
+
+body {
+  background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+}
+
+.App {
+  box-sizing: border-box;
+  margin: 100px auto 0 auto;
+  text-align: left;
+  height: calc(100vh - 100px);
+  width: 80%;
 }
