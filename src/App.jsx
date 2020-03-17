@@ -3,7 +3,6 @@ import './App.scss';
 import SearchContainer from './components/SearchContainer/SearchContainer';
 import Axios from 'axios';
 import Currently from './components/Currently/Currently';
-import Temprature from './components/Temprature/Temprature';
 
 const App = () => {
   const [geoLoaction, setGeoLocation] = useState({ lat: null, lng: null });

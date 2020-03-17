@@ -1,22 +1,27 @@
 import React from 'react';
 import Skycons from 'react-skycons';
-import Temprature from '../Temprature/Temprature';
+import Temperature from '../Temperature/Temperature';
+import classes from './Currently.module.scss';
 
 const Currently = props => {
   const convertIcon = icon => icon.replace(/-/g, '_').toUpperCase();
 
-  console.log(typeof props.currentWeather.temperature);
   return (
-    <div>
-      <p>summary: {props.currentWeather.summary}</p>
+    <div className={classes.Currently}>
+      <div className={classes.box}>
+        <p>{props.currentWeather.summary}</p>
+        <Temperature
+          temperature={props.currentWeather.temperature}
+          class={classes.temperature}
+        />
+      </div>
+
       <Skycons
-        color='black'
+        color='white'
         icon={convertIcon(props.currentWeather.icon)}
         autoplay={true}
-        style={{ width: '200px' }}
+        style={{ width: '250wsw3wswpx' }}
       />
-
-      <Temprature temprature={props.currentWeather.temperature} />
     </div>
   );
 };
