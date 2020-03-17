@@ -5,6 +5,7 @@ import classes from './Currently.module.scss';
 
 const Currently = props => {
   const convertIcon = icon => icon.replace(/-/g, '_').toUpperCase();
+  console.log(props.currentWeather.temperature);
 
   return (
     <div className={classes.Currently}>

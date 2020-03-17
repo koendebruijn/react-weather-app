@@ -1,3 +1,9 @@
 .Temperature {
   cursor: pointer;
+
+  .text {
+    color: rgba($color: #fff, $alpha: 0.7);
+    font-weight: 400;
+    font-size: 14px;
+  }
 }
