@@ -15,7 +15,7 @@ const Minutely = props => {
           color='white'
           icon={convertIcon(props.forecast.icon)}
           autoplay={true}
-          style={{ width: '250wsw3wswpx' }}
+          style={{ width: '250' }}
         />
       </div>
     </div>

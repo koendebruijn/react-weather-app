@@ -12,6 +12,7 @@ const Currently = props => {
         <p>{props.forecast.summary}</p>
         <Temperature
           temperature={props.forecast.temperature}
+          isClickable={true}
           class={classes.temperature}
         />
       </div>

@@ -28,7 +28,7 @@ const Forecast = props => {
         return <Minutely forecast={props.forecast.minutely} />;
 
       case ForecastType.hourly:
-        return <Hourly />;
+        return <Hourly forecast={props.forecast.hourly} />;
 
       case ForecastType.daily:
         return <Daily />;

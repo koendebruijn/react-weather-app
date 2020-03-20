@@ -1,0 +1,34 @@
+.ForecastCard {
+  color: white;
+  background-color: rgba($color: #fff, $alpha: 0.4);
+  padding: 2em;
+  border-radius: 10px;
+  margin-right: 1em;
+  height: 200px;
+
+  &:last-child {
+    margin: 0;
+  }
+
+  .dateTime {
+    opacity: 0.6;
+  }
+
+  .header {
+    height: 100%;
+    margin-top: 1em;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+
+    .col {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      p {
+        font-weight: bold;
+      }
+    }
+  }
+}

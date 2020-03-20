@@ -1,0 +1,12 @@
+.Hourly {
+  margin-top: 2em;
+}
+
+.sidescroll {
+  display: flex;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

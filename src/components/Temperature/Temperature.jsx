@@ -15,17 +15,20 @@ const Temperature = props => {
 
   return (
     <div
+      style={props.isClickable ? null : { cursor: 'unset' }}
       className={[classes.Temperature, props.class].join(' ')}
-      onClick={() => setIsCelsius(!isCelsius)}>
+      onClick={props.isClickable ? () => setIsCelsius(!isCelsius) : null}>
       <p>
         {isCelsius ? cel : fahr}
         <span>{isCelsius ? '°C' : '°F'}</span>
       </p>
-      <p className={classes.text}>
-        Click on the temperature
-        <br />
-        to change it to {isCelsius ? 'Fahrenheit' : 'Celcius'}
-      </p>
+      {props.isClickable ? (
+        <p className={classes.text}>
+          Click on the temperature
+          <br />
+          to change it to {isCelsius ? 'Fahrenheit' : 'Celcius'}
+        </p>
+      ) : null}
     </div>
   );
 };
