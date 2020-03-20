@@ -8,8 +8,9 @@ const Hourly = props => {
   return (
     <div className={classes.Hourly}>
       <div className={classes.sidescroll}>
-        {props.forecast.data.map(d => (
+        {props.forecast.data.map((d, index) => (
           <ForecastCard
+            key={index}
             dateTime={convertUnixTimestamp(d.time)}
             icon={d.icon}
             summary={d.summary}
