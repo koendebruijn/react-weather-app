@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.scss';
 import SearchContainer from './components/SearchContainer/SearchContainer';
 import Axios from 'axios';
-import Currently from './components/Currently/Currently';
+import Forecast from './components/Forecast/Forecast';
 
 const App = () => {
   const [geoLoaction, setGeoLocation] = useState({ lat: null, lng: null });
@@ -19,7 +19,6 @@ const App = () => {
       )
         .then(response => {
           setForecast(response.data);
-          console.log(response.data);
         })
         .catch(error => console.log(error));
     }
@@ -34,7 +33,7 @@ const App = () => {
   return (
     <div className='App'>
       <SearchContainer handleGeoLocation={handleGeoLocation} />
-      {forecast ? <Currently currentWeather={forecast.currently} /> : null}
+      {forecast ? <Forecast forecast={forecast} /> : null}
     </div>
   );
 };
