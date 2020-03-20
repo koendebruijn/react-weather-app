@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Currently from './Currently/Currently';
+import Minutely from './Minutely/Minutely';
+import Hourly from './Hourly/Hourly';
+import Daily from './Daily/Daily';
 import classes from './Forecast.module.scss';
 
 const Forecast = props => {
@@ -14,6 +17,25 @@ const Forecast = props => {
 
   const handleClick = e => {
     setActiveIndex(parseInt(e.target.getAttribute('data-index')));
+  };
+
+  const activeForecastView = () => {
+    switch (activeIndex) {
+      case ForecastType.currently:
+        return <Currently forecast={props.forecast.currently} />;
+
+      case ForecastType.minutely:
+        return <Minutely forecast={props.forecast.minutely} />;
+
+      case ForecastType.hourly:
+        return <Hourly />;
+
+      case ForecastType.daily:
+        return <Daily />;
+
+      default:
+        break;
+    }
   };
 
   return (
@@ -34,7 +56,7 @@ const Forecast = props => {
         ))}
       </div>
 
-      <Currently currentWeather={props.forecast.currently} />
+      {activeForecastView()}
     </div>
   );
 };

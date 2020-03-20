@@ -2,6 +2,7 @@
   "name": "weather-app",
   "version": "0.1.0",
   "homepage": "https://koendebruijn.github.io/react-weather-app/.",
+  "proxy": "http://localhost:4000",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.5",
