@@ -4,7 +4,6 @@ import classes from './Hourly.module.scss';
 
 const Hourly = props => {
   const convertUnixTimestamp = require('../../../Utils').unixTimeConverter;
-  console.log(props.forecast);
   return (
     <div className={classes.Hourly}>
       <div className={classes.sidescroll}>

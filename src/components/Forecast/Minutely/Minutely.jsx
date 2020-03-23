@@ -5,8 +5,6 @@ import classes from './Minutely.module.scss';
 const Minutely = props => {
   const convertIcon = require('../../../Utils').convertIcon;
 
-  console.log(props.forecast);
-
   return (
     <div className={classes.Minutely}>
       <div className={classes.header}>

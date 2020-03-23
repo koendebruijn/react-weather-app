@@ -31,7 +31,7 @@ const Forecast = props => {
         return <Hourly forecast={props.forecast.hourly} />;
 
       case ForecastType.daily:
-        return <Daily />;
+        return <Daily forecast={props.forecast.daily} />;
 
       default:
         break;

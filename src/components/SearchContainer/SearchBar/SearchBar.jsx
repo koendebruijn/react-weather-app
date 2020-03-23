@@ -29,7 +29,7 @@ const SearchBar = props => {
         <div>
           <input
             {...getInputProps({
-              placeholder: 'Search Places ...',
+              placeholder: 'Search your location',
               className: `location-search-input ${
                 suggestions.length === 0 ? classes.Input : classes.InputActive
               }`
