@@ -17,6 +17,7 @@ const App = () => {
       Axios.get(`${baseUrl}${apiKey}${geoLoaction.lat},${geoLoaction.lng}`)
         .then(response => {
           setForecast(response.data);
+          console.log(response.data);
         })
         .catch(error => console.log(error));
     }

@@ -9,6 +9,9 @@ const Daily = props => {
   // props.forecast.data.map(d => console.log(d));
   return (
     <div className={classes.Daily}>
+      <div className={classes.header}>
+        <p>{props.forecast.summary}</p>
+      </div>
       <div className={classes.sidescroll}>
         {props.forecast.data.map((d, index) => (
           <ForecastCard
